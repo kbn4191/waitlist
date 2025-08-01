@@ -821,10 +821,10 @@ export function encryptData(data: any): string {
 //   return encrypted.toString("base64");
 // }
 
-if (ENC_KEY?.length !== 32)
-  throw new Error(`ENC_KEY must be 32 bytes, got ${ENC_KEY?.length}`);
-if (ENC_IV?.length !== 16)
-  throw new Error(`ENC_IV must be 16 bytes, got ${ENC_IV?.length}`);
+// if (ENC_KEY?.length !== 32)
+//   throw new Error(`ENC_KEY must be 32 bytes, got ${ENC_KEY?.length}`);
+// if (ENC_IV?.length !== 16)
+//   throw new Error(`ENC_IV must be 16 bytes, got ${ENC_IV?.length}`);
 export function encryptDataForApi(data: any): string {
   let cipher = crypto.createCipheriv(ALGO, ENC_KEY, ENC_IV);
   let encrypted = cipher.update(JSON.stringify(data), "utf8", "base64");
